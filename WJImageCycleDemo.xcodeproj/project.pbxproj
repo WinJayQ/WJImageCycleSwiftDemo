@@ -171,6 +171,8 @@
 		9C1675771BA3F7750098FF3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = WJ;
 				TargetAttributes = {
@@ -429,6 +431,7 @@
 				9C1675A01BA3F7750098FF3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C1675A11BA3F7750098FF3C /* Build configuration list for PBXNativeTarget "WJImageCycleDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +440,7 @@
 				9C1675A31BA3F7750098FF3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

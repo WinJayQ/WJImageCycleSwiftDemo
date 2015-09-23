@@ -56,7 +56,7 @@ class WJImageCycleView: UIView,UIScrollViewDelegate {
         setUpCycleScrollView()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -82,7 +82,7 @@ class WJImageCycleView: UIView,UIScrollViewDelegate {
     func timerAction() {
         scrollView.setContentOffset(CGPointMake(self.frame.size.width * 2, 0), animated: true)
     }
-    private func setImageViewWithIndex(#index: Int,imageView:UIImageView!) {
+    private func setImageViewWithIndex(index index: Int,imageView:UIImageView!) {
         imageView.frame = CGRectMake(self.frame.size.width * CGFloat(index), 0, self.frame.size.width, self.frame.size.height)
         imageView.userInteractionEnabled = true
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
@@ -90,7 +90,7 @@ class WJImageCycleView: UIView,UIScrollViewDelegate {
         scrollView.addSubview(imageView)
         
         if imageView == self.currentImageView {
-            var imagesTap = UITapGestureRecognizer(target: self, action: Selector("imageTapAction"))
+            let imagesTap = UITapGestureRecognizer(target: self, action: Selector("imageTapAction"))
             currentImageView.addGestureRecognizer(imagesTap)
         }
     }
@@ -105,7 +105,7 @@ class WJImageCycleView: UIView,UIScrollViewDelegate {
         nextImageView.image = UIImage(named: (delegage?.currentPageViewIndex(getNextImageIndex(currentPageIndex)))!)
     }
     private func getLastImageIndex(currentImageIndex: Int) -> Int {
-        var tempIndex = currentPageIndex - 1
+        let tempIndex = currentPageIndex - 1
         if tempIndex == -1 {
             return totalPages - 1
         }else{
@@ -113,7 +113,7 @@ class WJImageCycleView: UIView,UIScrollViewDelegate {
         }
     }
     private func getNextImageIndex(currentImageIndex: Int) -> Int {
-        var tempIndex = currentPageIndex + 1
+        let tempIndex = currentPageIndex + 1
         return tempIndex < totalPages ? tempIndex : 0
     }
     
@@ -132,7 +132,7 @@ class WJImageCycleView: UIView,UIScrollViewDelegate {
         }
     }
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        var offset = scrollView.contentOffset.x
+        let offset = scrollView.contentOffset.x
         if offset == 0 {
             self.currentPageIndex = self.getLastImageIndex(self.currentPageIndex)
         }else if offset == self.frame.size.width * 2 {

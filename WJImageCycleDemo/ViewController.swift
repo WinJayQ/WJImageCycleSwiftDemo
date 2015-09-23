@@ -18,7 +18,7 @@ class ViewController: UIViewController,WJImageCycleViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.lightGrayColor()
         
-        var imageCycleView = WJImageCycleView(frame: CGRectMake(0, 0, self.view.frame.width-100, self.view.frame.height-200))
+        let imageCycleView = WJImageCycleView(frame: CGRectMake(0, 0, self.view.frame.width-100, self.view.frame.height-200))
         imageCycleView.center = self.view.center
         imageCycleView.backgroundColor = UIColor.blueColor()
         imageCycleView.delegage = self
@@ -36,7 +36,7 @@ class ViewController: UIViewController,WJImageCycleViewDelegate {
         return imageArray[index]
     }
     func didSelectCurrentPage(index: Int) {
-        println("\(index)")
+        print("\(index)")
     }
 
     override func didReceiveMemoryWarning() {
